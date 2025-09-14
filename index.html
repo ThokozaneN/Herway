@@ -19,11 +19,23 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#magazine">Magazine</a></li>
                 <li><a href="#community">Community</a></li>
+                <li><a href="#events">Events</a></li>
                 <li><a href="#resources">Resources</a></li>
                 <li><a href="shop.html">Shop</a></li>
+                <li><a href="#search" class="search-toggle"><i class="fas fa-search"></i></a></li>
+                <li><a href="#account" class="account-btn"><i class="fas fa-user"></i></a></li>
             </ul>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div class="search-bar">
+            <div class="container">
+                <form class="search-form">
+                    <input type="text" placeholder="Search articles, topics, resources..." class="search-input">
+                    <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
+                    <button type="button" class="search-close"><i class="fas fa-times"></i></button>
+                </form>
             </div>
         </div>
     </header>
@@ -34,11 +46,40 @@
             <div class="hero-content">
                 <h1>Empowerment Through Storytelling</h1>
                 <p>HerWay celebrates women's achievements, provides resources, and builds a supportive community for women worldwide.</p>
-                <a href="#community" class="btn">Join Our Community</a>
+                <div class="hero-buttons">
+                    <a href="#community" class="btn btn-primary">Join Our Community</a>
+                    <a href="#magazine" class="btn btn-secondary">Read Latest Issue</a>
+                </div>
             </div>
         </div>
         <div class="hero-bg"></div>
         <div class="hero-image" data-parallax="0.4"></div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stat-item">
+                <span class="stat-number" data-count="25000">0</span>
+                <span class="stat-label">Community Members</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="500">0</span>
+                <span class="stat-label">Articles Published</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="120">0</span>
+                <span class="stat-label">Events Hosted</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="45">0</span>
+                <span class="stat-label">Countries Reached</span>
+            </div>
+        </div>
     </section>
 
     <!-- About Section -->
@@ -47,12 +88,27 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>Our Purpose</h2>
-                    <p>"HerWay was born out of the need to create a space where women's voices are not only heard, but celebrated."</p>
+                    <p class="quote">"HerWay was born out of the need to create a space where women's voices are not only heard, but celebrated."</p>
                     <p>We're about empowering women to take up space in leadership, business, and everyday life. Our platform inspires through stories, guides with resources, and connects women with a supportive community.</p>
-                    <a href="#" class="btn">Learn More</a>
+                    <div class="mission-vision">
+                        <div class="mission">
+                            <h3>Our Mission</h3>
+                            <p>To provide a platform that amplifies women's voices and fosters empowerment through storytelling, resources, and community building.</p>
+                        </div>
+                        <div class="vision">
+                            <h3>Our Vision</h3>
+                            <p>A world where every woman has the tools, support, and confidence to pursue her dreams and reach her full potential.</p>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary">Learn More</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Diverse women collaborating">
+                    <img src="images/file_0000000000b061f58ab7506b48defcae.png" alt="Diverse women collaborating">
+                    <div class="team-highlight">
+                        <h4>Meet Our Team</h4>
+                        <p>Passionate women dedicated to making a difference</p>
+                        <a href="team.html" class="btn btn-outline">View Team</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,61 +119,123 @@
         <div class="container">
             <div class="section-header">
                 <h2>Featured Articles</h2>
-                <p>Explore our latest content on leadership, entrepreneurship, health, and lifestyle</p>
+                <p>Explore our latest content on leadership, entrepreneurship, health, and lifestyle.</p>
+                <div class="category-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="leadership">Leadership</button>
+                    <button class="filter-btn" data-filter="business">Business</button>
+                    <button class="filter-btn" data-filter="health">Health</button>
+                    <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+                </div>
             </div>
             <div class="articles-grid">
-                <div class="article-card">
+                <div class="article-card" data-category="leadership">
                     <div class="article-image">
                         <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Women in leadership">
+                        <div class="article-badge">Featured</div>
                     </div>
                     <div class="article-content">
                         <div class="article-meta">
-                            <span>Leadership</span>
-                            <span>June 15, 2023</span>
+                            <span class="category">Leadership</span>
+                            <span class="date"><i class="far fa-clock"></i> June 15, 2023</span>
+                            <span class="read-time">5 min read</span>
                         </div>
                         <h3>Breaking the Glass Ceiling</h3>
                         <p>Learn how women are reshaping corporate culture and claiming their space in boardrooms.</p>
-                        <a href="#" class="btn btn-accent">Read More</a>
+                        <div class="article-footer">
+                            <a href="#" class="btn btn-primary">Read More</a>
+                            <div class="article-actions">
+                                <button class="icon-btn"><i class="far fa-bookmark"></i></button>
+                                <button class="icon-btn"><i class="fas fa-share-alt"></i></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="article-card">
+                <div class="article-card" data-category="business">
                     <div class="article-image">
                         <img src="https://images.unsplash.com/photo-1573164574230-db1d5e960238?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Women entrepreneurship">
                     </div>
                     <div class="article-content">
                         <div class="article-meta">
-                            <span>Business</span>
-                            <span>June 10, 2023</span>
+                            <span class="category">Business</span>
+                            <span class="date"><i class="far fa-clock"></i> June 10, 2023</span>
+                            <span class="read-time">7 min read</span>
                         </div>
                         <h3>From Side Hustle to Success</h3>
                         <p>Discover how these women turned their passion projects into profitable businesses.</p>
-                        <a href="#" class="btn btn-accent">Read More</a>
+                        <div class="article-footer">
+                            <a href="#" class="btn btn-primary">Read More</a>
+                            <div class="article-actions">
+                                <button class="icon-btn"><i class="far fa-bookmark"></i></button>
+                                <button class="icon-btn"><i class="fas fa-share-alt"></i></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="article-card">
+                <div class="article-card" data-category="health">
                     <div class="article-image">
                         <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Women health">
                     </div>
                     <div class="article-content">
                         <div class="article-meta">
-                            <span>Health</span>
-                            <span>June 5, 2023</span>
+                            <span class="category">Health</span>
+                            <span class="date"><i class="far fa-clock"></i> June 5, 2023</span>
+                            <span class="read-time">4 min read</span>
                         </div>
                         <h3>Endometriosis Awareness</h3>
                         <p>Understanding endometriosis and how to advocate for better women's healthcare.</p>
-                        <a href="#" class="btn btn-accent">Read More</a>
+                        <div class="article-footer">
+                            <a href="#" class="btn btn-primary">Read More</a>
+                            <div class="article-actions">
+                                <button class="icon-btn"><i class="far fa-bookmark"></i></button>
+                                <button class="icon-btn"><i class="fas fa-share-alt"></i></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="article-card" data-category="lifestyle">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Women lifestyle">
+                        <div class="article-badge">New</div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="category">Lifestyle</span>
+                            <span class="date"><i class="far fa-clock"></i> June 1, 2023</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                        <h3>Finding Balance in a Busy World</h3>
+                        <p>Practical tips for maintaining work-life balance and prioritizing self-care.</p>
+                        <div class="article-footer">
+                            <a href="#" class="btn btn-primary">Read More</a>
+                            <div class="article-actions">
+                                <button class="icon-btn"><i class="far fa-bookmark"></i></button>
+                                <button class="icon-btn"><i class="fas fa-share-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-footer">
+                <a href="magazine.html" class="btn btn-outline">View All Articles</a>
             </div>
         </div>
     </section>
 
-    <!-- Parallax Section -->
-    <section class="parallax">
-        <div class="parallax-content">
-            <h2>Together We Rise</h2>
-            <p>Join a community of women supporting women. Share your story, find mentorship, and grow together.</p>
-            <a href="#" class="btn">Share Your Story</a>
+    <!-- Featured Story Section -->
+    <section class="featured-story">
+        <div class="container">
+            <div class="featured-content">
+                <div class="featured-text">
+                    <span class="section-label">Featured Story</span>
+                    <h2>Meet Sarah Johnson: From Corporate Executive to Social Entrepreneur</h2>
+                    <p>After 15 years in the corporate world, Sarah left her high-paying job to start a nonprofit that empowers young women in STEM fields. Learn about her journey, challenges, and the impact she's making.</p>
+                    <a href="story-sarah-johnson.html" class="btn btn-primary">Read Her Story</a>
+                </div>
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sarah Johnson featured story">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -126,7 +244,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Join Our Community</h2>
-                <p>Connect, share, and grow with women around the world</p>
+                <p>Connect, share, and grow with women around the world.</p>
             </div>
             <div class="community-cards">
                 <div class="community-card">
@@ -135,6 +253,7 @@
                     </div>
                     <h3>Discussion Forums</h3>
                     <p>Join conversations on topics that matter to women. Share experiences and get support.</p>
+                    <a href="community.html#forums" class="btn btn-outline">Join Conversations</a>
                 </div>
                 <div class="community-card">
                     <div class="community-icon">
@@ -142,6 +261,7 @@
                     </div>
                     <h3>Mentorship Program</h3>
                     <p>Connect with mentors who can guide you in your career and personal development.</p>
+                    <a href="community.html#mentorship" class="btn btn-outline">Find a Mentor</a>
                 </div>
                 <div class="community-card">
                     <div class="community-icon">
@@ -149,6 +269,184 @@
                     </div>
                     <h3>Events & Workshops</h3>
                     <p>Participate in our networking events, workshops, and empowerment programs.</p>
+                    <a href="community.html#events" class="btn btn-outline">View Events</a>
+                </div>
+                <div class="community-card">
+                    <div class="community-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Local Chapters</h3>
+                    <p>Join or start a local HerWay chapter in your city to connect with women nearby.</p>
+                    <a href="community.html#chapters" class="btn btn-outline">Find a Chapter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Community Says</h2>
+                <p>Real stories from women who have found value in our community.</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"HerWay connected me with a mentor who completely transformed my career path. I'm now running my own successful business!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Alex Morgan">
+                        <div class="author-info">
+                            <h4>Alex Morgan</h4>
+                            <span>Entrepreneur</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"The articles and resources helped me navigate a difficult career transition. I've never felt more supported in my professional journey."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Priya Sharma">
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <span>Marketing Director</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"As a young professional, finding this community was a game-changer. The advice and support I've received have been invaluable."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Maria Rodriguez">
+                        <div class="author-info">
+                            <h4>Maria Rodriguez</h4>
+                            <span>Software Engineer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="control-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="control-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Events & Workshops</h2>
+                <p>Join our networking events, workshops, and empowerment programs designed to inspire and connect women worldwide.</p>
+            </div>
+            <div class="events-cards">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">20</span>
+                        <span class="month">Sep</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-type">Webinar</span>
+                        <h4>Leadership Strategies for Women</h4>
+                        <p><i class="far fa-clock"></i> 2:00 PM - 4:00 PM EST</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Online</p>
+                        <p>Learn leadership strategies from top women executives in corporate and startup environments.</p>
+                        <div class="event-footer">
+                            <a href="events.html#leadership" class="btn btn-primary">Register Now</a>
+                            <span class="event-spots">Limited spots available</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">05</span>
+                        <span class="month">Oct</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-type">Workshop</span>
+                        <h4>Entrepreneurship Bootcamp</h4>
+                        <p><i class="far fa-clock"></i> 9:00 AM - 5:00 PM SAST</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Johannesburg, SA</p>
+                        <p>A hands-on workshop to help aspiring female entrepreneurs turn ideas into profitable businesses.</p>
+                        <div class="event-footer">
+                            <a href="events.html#bootcamp" class="btn btn-primary">Register</a>
+                            <span class="event-spots">Early bird pricing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">10</span>
+                        <span class="month">Nov</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-type">Retreat</span>
+                        <h4>Wellness Retreat</h4>
+                        <p><i class="far fa-clock"></i> All Day</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Cape Town, SA</p>
+                        <p>Recharge your body and mind with guided wellness sessions and mindfulness workshops.</p>
+                        <div class="event-footer">
+                            <a href="events.html#wellness" class="btn btn-primary">Join Now</a>
+                            <span class="event-spots">Only 5 spots left</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="events-calendar-link">
+                <a href="events-calendar.html" class="btn btn-outline"><i class="far fa-calendar-alt"></i> View Full Calendar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources & Tools Section -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resources & Tools</h2>
+                <p>Explore our curated guides, scholarships, career tools, and mental health resources designed to support women at every stage.</p>
+            </div>
+            <div class="resources-tabs">
+                <div class="tab-headers">
+                    <button class="tab-header active" data-tab="career">Career Development</button>
+                    <button class="tab-header" data-tab="education">Education & Scholarships</button>
+                    <button class="tab-header" data-tab="wellness">Health & Wellness</button>
+                    <button class="tab-header" data-tab="finance">Financial Literacy</button>
+                </div>
+                <div class="tab-contents">
+                    <div class="tab-content active" data-tab="career">
+                        <div class="resources-cards">
+                            <div class="resource-card">
+                                <i class="fas fa-briefcase"></i>
+                                <h4>Resume Builder Tool</h4>
+                                <p>Create a professional resume with our easy-to-use template designed to highlight your achievements.</p>
+                                <a href="resources.html#resume-builder" class="btn btn-outline">Get Started</a>
+                            </div>
+                            <div class="resource-card">
+                                <i class="fas fa-network-wired"></i>
+                                <h4>Networking Guide</h4>
+                                <p>Learn how to build meaningful professional connections that advance your career.</p>
+                                <a href="resources.html#networking" class="btn btn-outline">Download Guide</a>
+                            </div>
+                            <div class="resource-card">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Salary Negotiation Toolkit</h4>
+                                <p>Resources and scripts to help you negotiate your salary with confidence.</p>
+                                <a href="resources.html#salary-negotiation" class="btn btn-outline">Access Toolkit</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Other tab contents would go here -->
+                </div>
+            </div>
+            <div class="resources-cta">
+                <h3>Looking for something specific?</h3>
+                <p>Browse our complete resource library or request a resource we don't have yet.</p>
+                <div class="cta-buttons">
+                    <a href="resources-library.html" class="btn btn-primary">Browse All Resources</a>
+                    <a href="resources-request.html" class="btn btn-outline">Request a Resource</a>
                 </div>
             </div>
         </div>
@@ -157,12 +455,75 @@
     <!-- Newsletter -->
     <section class="newsletter">
         <div class="container">
-            <h2>Stay Inspired</h2>
-            <p>Subscribe to our newsletter for daily affirmations, updates, and exclusive content</p>
-            <form class="newsletter-form">
-                <input type="email" class="newsletter-input" placeholder="Your email address">
-                <button type="submit" class="btn">Subscribe</button>
-            </form>
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Stay Inspired</h2>
+                    <p>Subscribe to our newsletter for weekly inspiration, updates, and exclusive content.</p>
+                    <ul class="newsletter-benefits">
+                        <li><i class="fas fa-check"></i> Weekly roundup of new articles</li>
+                        <li><i class="fas fa-check"></i> Exclusive interviews and stories</li>
+                        <li><i class="fas fa-check"></i> Event invitations and early access</li>
+                        <li><i class="fas fa-check"></i> Free resources and guides</li>
+                    </ul>
+                </div>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <label for="newsletter-name">Name</label>
+                        <input type="text" id="newsletter-name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newsletter-email">Email</label>
+                        <input type="email" id="newsletter-email" placeholder="Your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newsletter-interests">I'm interested in</label>
+                        <select id="newsletter-interests">
+                            <option value="">Select topics (optional)</option>
+                            <option value="career">Career Development</option>
+                            <option value="business">Entrepreneurship</option>
+                            <option value="health">Health & Wellness</option>
+                            <option value="leadership">Leadership</option>
+                            <option value="all">All Topics</option>
+                        </select>
+                    </div>
+                    <div class="form-group consent">
+                        <input type="checkbox" id="newsletter-consent" required>
+                        <label for="newsletter-consent">I agree to receive newsletters and updates from HerWay Magazine</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Partners & Supporters</h2>
+                <p>We're proud to collaborate with organizations that share our mission of empowering women.</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-item">
+                    <img src="https://via.placeholder.com/150x80?text=Partner+1" alt="Partner 1">
+                </div>
+                <div class="partner-item">
+                    <img src="https://via.placeholder.com/150x80?text=Partner+2" alt="Partner 2">
+                </div>
+                <div class="partner-item">
+                    <img src="https://via.placeholder.com/150x80?text=Partner+3" alt="Partner 3">
+                </div>
+                <div class="partner-item">
+                    <img src="https://via.placeholder.com/150x80?text=Partner+4" alt="Partner 4">
+                </div>
+                <div class="partner-item">
+                    <img src="https://via.placeholder.com/150x80?text=Partner+5" alt="Partner 5">
+                </div>
+            </div>
+            <div class="partners-cta">
+                <p>Interested in partnering with us?</p>
+                <a href="partnerships.html" class="btn btn-outline">Learn About Partnerships</a>
+            </div>
         </div>
     </section>
 
@@ -178,41 +539,106 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3>Explore</h3>
                     <ul class="footer-links">
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#magazine">Magazine</a></li>
                         <li><a href="#community">Community</a></li>
+                        <li><a href="#events">Events</a></li>
                         <li><a href="#resources">Resources</a></li>
-                        <li><a href="#shop">HerWay Shop</a></li>
+                        <li><a href="shop.html">HerWay Shop</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Scholarships & Grants</a></li>
-                        <li><a href="#">Career Development</a></li>
-                        <li><a href="#">Mental Health Support</a></li>
-                        <li><a href="#">Wellness Guides</a></li>
+                        <li><a href="resources.html#scholarships">Scholarships & Grants</a></li>
+                        <li><a href="resources.html#career">Career Development</a></li>
+                        <li><a href="resources.html#mental-health">Mental Health Support</a></li>
+                        <li><a href="resources.html#wellness-guides">Wellness Guides</a></li>
+                        <li><a href="resources.html#financial">Financial Literacy</a></li>
+                        <li><a href="resources-library.html">Resource Library</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><a href="mailto:info@herwaymagazine.com">info@herwaymagazine.com</a></li>
-                        <li><a href="tel:+12345678900">+1 (234) 567-8900</a></li>
-                        <li><a href="#">123 Empowerment Ave, Suite 456</a></li>
+                        <li><a href="mailto:info@herwaymagazine.com"><i class="fas fa-envelope"></i> info@herwaymagazine.com</a></li>
+                        <li><a href="tel:+12345678900"><i class="fas fa-phone"></i> +1 (234) 567-8900</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Empowerment Ave, Suite 456</a></li>
                     </ul>
+                    <div class="footer-newsletter">
+                        <h4>Stay Updated</h4>
+                        <form class="footer-newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 HerWay Magazine. All rights reserved.</p>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 HerWay Magazine. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="cookies.html">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Welcome Back</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <div class="auth-divider">
+                <span>Or</span>
+            </div>
+            <div class="social-auth">
+                <button class="btn btn-social google-btn">
+                    <i class="fab fa-google"></i> Continue with Google
+                </button>
+                <button class="btn btn-social facebook-btn">
+                    <i class="fab fa-facebook-f"></i> Continue with Facebook
+                </button>
+            </div>
+            <div class="auth-switch">
+                <p>Don't have an account? <a href="register.html">Sign up</a></p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
