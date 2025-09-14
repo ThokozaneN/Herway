@@ -115,7 +115,7 @@ h1, h2 {
     transform: scale(1.1);
 }
 
-/* Header & Navigation */
+/* Header & Navigation - Fixed for mobile */
 #header {
     position: fixed;
     top: 0;
@@ -131,12 +131,14 @@ h1, h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 15px 20px;
+    width: 100%;
 }
 
 .logo h1 {
     font-size: 2rem;
     color: var(--dark);
+    margin: 0;
 }
 
 .logo span {
@@ -187,6 +189,8 @@ h1, h2 {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    z-index: 1001;
+    padding: 5px;
 }
 
 .search-bar {
@@ -1154,7 +1158,7 @@ footer {
     width: 30px;
     height: 30px;
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 100%;
+    border-radius: 50%;
     color: var(--white);
     transition: var(--transition);
 }
@@ -1447,7 +1451,7 @@ footer {
     transition: transform 0.3s ease-out;
 }
 
-/* Responsive Styles */
+/* Responsive Styles - Fixed for mobile */
 @media (max-width: 992px) {
     .hero-content h1 {
         font-size: 2.8rem;
@@ -1483,18 +1487,36 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Mobile navigation fixes */
+    .header-container {
+        padding: 12px 15px;
+    }
+    
+    .logo {
+        flex: 1;
+        min-width: 0;
+    }
+    
+    .logo h1 {
+        font-size: 1.6rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
     .nav-links {
         position: fixed;
-        top: 80px;
+        top: 0;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: 100vh;
         background-color: var(--white);
         flex-direction: column;
         align-items: center;
         justify-content: center;
         transition: var(--transition);
-        z-index: 999;
+        z-index: 1000;
+        padding: 20px;
     }
     
     .nav-links.active {
@@ -1506,7 +1528,13 @@ footer {
     }
     
     .mobile-menu-btn {
-        display: block;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        margin-left: 10px;
     }
     
     .hero-buttons {
@@ -1533,6 +1561,20 @@ footer {
 }
 
 @media (max-width: 576px) {
+    .header-container {
+        padding: 10px 12px;
+    }
+    
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+    
+    .mobile-menu-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+    
     .hero-content h1 {
         font-size: 2.2rem;
     }
@@ -1569,4 +1611,17 @@ footer {
     .cta-buttons {
         flex-direction: column;
     }
+}
+
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden;
+}
+
+/* Ensure header doesn't cause overflow */
+#header {
+    width: 100%;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
 }
