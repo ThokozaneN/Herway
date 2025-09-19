@@ -3,135 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HerWay Shop - Empowering Merchandise</title>
+    <title>HerWay Merch Store - Empowered Apparel & Accessories</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2D2B42;
-            --accent: #FF5E8E;
-            --neutral: #F7F7F9;
-            --text: #1A1A1A;
-            --text-light: #666687;
+            --gold: #D4AF37;
+            --gold-light: #F4E4A6;
+            --gold-dark: #B8941F;
+            --black: #000000;
             --white: #FFFFFF;
-            --sale: #FF5E8E;
-            --success: #4CAF50;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --gray: #2C2C2C;
+            --gray-light: #F5F5F5;
+            --accent: #8A4F7D;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         html {
             scroll-behavior: smooth;
         }
-
+        
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            background-color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--gray);
             line-height: 1.6;
+            background-color: var(--white);
             overflow-x: hidden;
-            font-weight: 400;
         }
-
+        
         h1, h2, h3, h4, h5 {
-            font-family: 'Libre Caslon Display', serif;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            color: var(--text);
-            letter-spacing: -0.5px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--black);
         }
-
+        
         h1 {
             font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 2rem;
+            font-weight: 800;
+            line-height: 1.2;
         }
-
+        
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             position: relative;
+            display: inline-block;
         }
-
-        h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: var(--gold);
         }
-
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
         p {
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
-            color: var(--text-light);
-            line-height: 1.7;
         }
-
+        
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
         }
-
+        
         .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 16px 32px;
-            background: var(--text);
-            color: var(--white);
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--gold);
+            color: var(--black);
             text-decoration: none;
-            font-weight: 500;
-            border-radius: 0;
+            border-radius: 50px;
+            font-weight: 600;
             transition: var(--transition);
-            border: none;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 0.9rem;
-            cursor: pointer;
+            border: 2px solid var(--gold);
             position: relative;
             overflow: hidden;
         }
-
-        .btn:after {
+        
+        .btn:before {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
+            top: 0;
+            left: -100%;
             width: 100%;
-            height: 2px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.4s ease;
         }
-
+        
+        .btn:hover:before {
+            left: 100%;
+        }
+        
         .btn:hover {
-            background: var(--primary);
-        }
-
-        .btn:hover:after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        .btn-accent {
-            background: var(--accent);
-        }
-
-        .btn-outline {
             background: transparent;
-            color: var(--text);
-            border: 1px solid var(--text);
+            color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
         }
-
-        .btn-outline:hover {
-            background: var(--text);
+        
+        .btn-secondary {
+            background: var(--black);
+            border-color: var(--black);
             color: var(--white);
         }
-
+        
+        .btn-secondary:hover {
+            background: transparent;
+            color: var(--black);
+        }
+        
         /* Header & Navigation */
         header {
             position: fixed;
@@ -139,554 +144,580 @@
             left: 0;
             width: 100%;
             z-index: 1000;
+            padding: 1.5rem 0;
+            transition: all 0.4s ease;
             background: rgba(255, 255, 255, 0.95);
-            padding: 20px 0;
-            transition: var(--transition);
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
-
+        
         header.scrolled {
-            padding: 15px 0;
+            padding: 1rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
-
+        
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--black);
+            text-decoration: none;
             display: flex;
             align-items: center;
         }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            margin: 0;
-            color: var(--text);
-        }
-
+        
         .logo span {
-            color: var(--accent);
+            color: var(--gold);
         }
-
-        .nav-links {
+        
+        .logo i {
+            font-size: 1.8rem;
+            margin-right: 8px;
+            color: var(--gold);
+        }
+        
+        nav ul {
             display: flex;
             list-style: none;
         }
-
-        .nav-links li {
-            margin: 0 20px;
+        
+        nav ul li {
+            margin-left: 2rem;
+            position: relative;
         }
-
-        .nav-links a {
+        
+        nav ul li a {
+            color: var(--gray);
             text-decoration: none;
-            color: var(--text);
             font-weight: 500;
             transition: var(--transition);
             position: relative;
-            font-size: 0.95rem;
         }
-
-        .nav-links a:after {
+        
+        nav ul li a:after {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent);
-            transition: var(--transition);
+            background: var(--gold);
+            transition: all 0.3s ease;
         }
-
-        .nav-links a:hover {
-            color: var(--accent);
+        
+        nav ul li a:hover {
+            color: var(--gold);
         }
-
-        .nav-links a:hover:after {
+        
+        nav ul li a:hover:after {
             width: 100%;
         }
-
+        
         .cart-icon {
             position: relative;
-            margin-left: 30px;
-            cursor: pointer;
         }
-
+        
         .cart-count {
             position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--accent);
-            color: white;
-            font-size: 0.7rem;
-            width: 18px;
-            height: 18px;
+            top: -10px;
+            right: -10px;
+            background: var(--gold);
+            color: var(--black);
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
         }
-
+        
         .mobile-menu-btn {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--text);
-        }
-
-        /* Shop Hero */
-        .shop-hero {
-            padding: 160px 0 80px;
-            background: var(--neutral);
-            text-align: center;
-        }
-
-        .shop-hero p {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Products Section */
-        .products {
-            padding: 80px 0;
-        }
-
-        .shop-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 50px;
-        }
-
-        .filter-options {
-            display: flex;
-            gap: 15px;
-        }
-
-        .filter-btn {
-            padding: 8px 20px;
-            background: var(--neutral);
+            color: var(--black);
+            background: none;
             border: none;
+        }
+        
+        /* Hero Section */
+        .merch-hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--gold-light) 100%);
+        }
+        
+        .hero-content {
+            width: 50%;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-image {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: url('https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') center/cover no-repeat;
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+        
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+        
+        .hero-buttons {
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+        
+        /* Categories Section */
+        .categories {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: var(--gray-light);
+            border: none;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
             cursor: pointer;
             transition: var(--transition);
         }
-
-        .filter-btn.active {
-            background: var(--text);
-            color: var(--white);
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--gold);
+            color: var(--black);
         }
-
+        
+        /* Products Grid */
+        .products {
+            padding: 80px 0;
+            background: var(--gray-light);
+        }
+        
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 40px;
+            gap: 2rem;
         }
-
+        
         .product-card {
             background: var(--white);
+            border-radius: 15px;
             overflow: hidden;
+            box-shadow: var(--shadow);
             transition: var(--transition);
             opacity: 0;
-            transform: translateY(30px);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            transform: translateY(50px);
             position: relative;
         }
-
+        
         .product-card.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
+        
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-hover);
         }
-
+        
         .product-badge {
             position: absolute;
             top: 15px;
-            left: 15px;
-            background: var(--sale);
-            color: white;
+            right: 15px;
+            background: var(--accent);
+            color: var(--white);
             padding: 5px 10px;
+            border-radius: 20px;
             font-size: 0.8rem;
+            font-weight: 600;
             z-index: 2;
         }
-
+        
         .product-image {
-            height: 280px;
-            overflow: hidden;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
             position: relative;
         }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .product-card:hover .product-image img {
+        
+        .product-card:hover .product-image {
             transform: scale(1.05);
         }
-
-        .product-actions {
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.95);
-            transition: var(--transition);
+        
+        .product-content {
+            padding: 1.5rem;
         }
-
-        .product-card:hover .product-actions {
-            bottom: 0;
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--black);
         }
-
-        .action-btn {
-            width: 40px;
-            height: 40px;
+        
+        .product-price {
+            font-weight: 700;
+            color: var(--gold-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .product-options {
+            margin-top: 1rem;
+        }
+        
+        .option-group {
+            margin-bottom: 1rem;
+        }
+        
+        .option-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .option-buttons {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--text);
-            color: white;
-            border: none;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .option-btn {
+            padding: 5px 10px;
+            background: var(--gray-light);
+            border: 1px solid var(--gray-light);
+            border-radius: 5px;
+            font-size: 0.8rem;
             cursor: pointer;
             transition: var(--transition);
         }
-
-        .action-btn:hover {
-            background: var(--accent);
+        
+        .option-btn.selected, .option-btn:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--black);
         }
-
-        .product-content {
-            padding: 25px;
-        }
-
-        .product-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .product-price {
+        
+        .quantity-selector {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
+            margin: 1rem 0;
         }
-
-        .current-price {
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            background: var(--gray-light);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .quantity-btn:hover {
+            background: var(--gold);
+        }
+        
+        .quantity-input {
+            width: 40px;
+            text-align: center;
+            border: none;
             font-weight: 600;
-            font-size: 1.2rem;
+            margin: 0 10px;
         }
-
-        .original-price {
-            text-decoration: line-through;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .product-rating {
-            color: #FFC107;
-            margin-bottom: 15px;
-        }
-
-        /* Featured Collection */
-        .featured-collection {
+        
+        /* Impact Section */
+        .impact {
             padding: 80px 0;
-            background: var(--neutral);
+            background: var(--white);
         }
-
-        .collection-grid {
+        
+        .impact-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
         }
-
-        .collection-card {
-            position: relative;
-            height: 400px;
-            overflow: hidden;
-        }
-
-        .collection-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        
+        .impact-card {
+            background: var(--gray-light);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
             transition: var(--transition);
         }
-
-        .collection-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 30px;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-            color: white;
-            transition: var(--transition);
+        
+        .impact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
         }
-
-        .collection-card:hover .collection-image {
-            transform: scale(1.1);
+        
+        .impact-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
         }
-
-        .collection-card:hover .collection-content {
-            background: linear-gradient(transparent, var(--accent));
+        
+        .impact-card h3 {
+            margin-bottom: 1rem;
+            color: var(--black);
         }
-
-        /* Newsletter */
+        
+        /* Newsletter Section */
         .newsletter {
             padding: 80px 0;
+            background: linear-gradient(135deg, var(--black) 0%, var(--gray) 100%);
+            color: var(--white);
             text-align: center;
         }
-
-        .newsletter-form {
-            max-width: 500px;
-            margin: 40px auto 0;
-            display: flex;
-            gap: 15px;
+        
+        .newsletter h2 {
+            color: var(--white);
         }
-
+        
+        .newsletter h2:after {
+            background: var(--gold);
+        }
+        
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
         .newsletter-input {
             flex: 1;
-            padding: 16px 20px;
+            padding: 15px 20px;
             border: none;
-            border-bottom: 2px solid var(--text-light);
-            font-family: 'Inter', sans-serif;
+            border-radius: 50px 0 0 50px;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
-            background: transparent;
+        }
+        
+        .newsletter-btn {
+            padding: 15px 30px;
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            border-radius: 0 50px 50px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
             transition: var(--transition);
         }
-
-        .newsletter-input:focus {
-            outline: none;
-            border-color: var(--accent);
+        
+        .newsletter-btn:hover {
+            background: var(--gold-dark);
         }
-
+        
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: var(--shadow-hover);
+            z-index: 999;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+        
         /* Footer */
         footer {
-            background: var(--primary);
+            background: var(--black);
             color: var(--white);
-            padding: 80px 0 30px;
+            padding: 80px 0 40px;
         }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 70px;
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            margin-bottom: 3rem;
         }
-
-        .footer-column h3 {
-            color: var(--accent);
-            margin-bottom: 30px;
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
             font-size: 1.5rem;
+            position: relative;
         }
-
+        
+        .footer-col h4:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gold);
+        }
+        
         .footer-links {
             list-style: none;
         }
-
+        
         .footer-links li {
-            margin-bottom: 15px;
+            margin-bottom: 0.8rem;
         }
-
+        
         .footer-links a {
-            color: var(--white);
+            color: var(--gray-light);
             text-decoration: none;
             transition: var(--transition);
-            opacity: 0.8;
         }
-
+        
         .footer-links a:hover {
-            opacity: 1;
-            color: var(--accent);
+            color: var(--gold);
+            padding-left: 5px;
         }
-
-        .social-icons {
+        
+        .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
-
-        .social-icons a {
+        
+        .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
             color: var(--white);
             transition: var(--transition);
         }
-
-        .social-icons a:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
+        
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-5px);
         }
-
+        
         .copyright {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
-            opacity: 0.7;
+            color: rgba(255, 255, 255, 0.7);
         }
-
-        /* Cart Modal */
-        .cart-modal {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 380px;
-            height: 100vh;
-            background: var(--white);
-            z-index: 1001;
-            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            padding: 30px;
-            overflow-y: auto;
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-
-        .cart-modal.active {
-            right: 0;
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
         }
-
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--neutral);
-        }
-
-        .close-cart {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .cart-items {
-            margin-bottom: 30px;
-        }
-
-        .cart-item {
-            display: flex;
-            gap: 15px;
-            padding: 15px 0;
-            border-bottom: 1px solid var(--neutral);
-        }
-
-        .cart-item-image {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-        }
-
-        .cart-item-details {
-            flex: 1;
-        }
-
-        .cart-item-title {
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-
-        .cart-item-price {
-            color: var(--text-light);
-            margin-bottom: 10px;
-        }
-
-        .cart-item-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .quantity-btn {
-            width: 25px;
-            height: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--neutral);
-            border: none;
-            cursor: pointer;
-        }
-
-        .cart-item-quantity {
-            margin: 0 5px;
-        }
-
-        .remove-item {
-            color: var(--accent);
-            background: none;
-            border: none;
-            cursor: pointer;
-            margin-left: auto;
-        }
-
-        .cart-total {
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .checkout-btn {
-            width: 100%;
-            text-align: center;
-            justify-content: center;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
+        
         /* Responsive Design */
         @media (max-width: 992px) {
             h1 {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
             
             h2 {
                 font-size: 2.2rem;
             }
             
-            .collection-grid {
-                grid-template-columns: 1fr;
+            .hero-content {
+                width: 100%;
+                text-align: center;
+                padding: 4rem 2rem;
+                background: rgba(255, 255, 255, 0.9);
+            }
+            
+            .hero-image {
+                width: 100%;
+                z-index: -1;
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                opacity: 0.3;
             }
         }
-
+        
         @media (max-width: 768px) {
-            .nav-links {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
                 position: fixed;
                 top: 80px;
                 left: -100%;
@@ -696,54 +727,60 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                transition: var(--transition);
-                gap: 30px;
+                transition: all 0.4s ease;
             }
             
-            .nav-links.active {
+            nav ul.active {
                 left: 0;
             }
             
-            .mobile-menu-btn {
-                display: block;
+            nav ul li {
+                margin: 1.5rem 0;
             }
             
-            .shop-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-            }
-            
-            .filter-options {
-                flex-wrap: wrap;
+            .products-grid, .impact-grid {
+                grid-template-columns: 1fr;
             }
             
             .newsletter-form {
                 flex-direction: column;
             }
             
-            .cart-modal {
-                width: 100%;
-                right: -100%;
+            .newsletter-input {
+                border-radius: 50px;
+                margin-bottom: 1rem;
+            }
+            
+            .newsletter-btn {
+                border-radius: 50px;
             }
         }
-
+        
         @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
-            .products-grid {
-                grid-template-columns: 1fr;
+            .btn {
+                padding: 12px 25px;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .merch-hero {
+                height: auto;
+                padding: 100px 0;
+            }
+            
+            .category-filters {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -752,299 +789,504 @@
     <!-- Header & Navigation -->
     <header id="header">
         <div class="container header-container">
-            <div class="logo">
-                <h1>Her<span>Way</span></h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Magazine</a></li>
-                <li><a href="#">Community</a></li>
-                <li><a href="#" class="active">Shop</a></li>
-                <li><a href="#">Resources</a></li>
-            </ul>
-            <div class="cart-icon" id="cartIcon">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="cart-count">3</span>
-            </div>
-            <div class="mobile-menu-btn">
+            <a href="#" class="logo"><i class="fas fa-crown"></i>Her<span>Way</span></a>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#impact">Our Impact</a></li>
+                    <li><a href="#" class="cart-icon"><i class="fas fa-shopping-bag"></i> <span class="cart-count">0</span></a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Shop Hero -->
-    <section class="shop-hero">
+    <!-- Hero Section -->
+    <section class="merch-hero">
+        <div class="hero-content">
+            <h1>Wear Your Empowerment</h1>
+            <p class="hero-tagline">Express your strength with HerWay merchandise. Each purchase supports our mission to empower women worldwide.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn">Shop Now</a>
+                <a href="#impact" class="btn btn-secondary">Our Impact</a>
+            </div>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
         <div class="container">
-            <h1>HerWay Shop</h1>
-            <p>Wear your empowerment. Each purchase supports our mission to celebrate and elevate women's voices around the world.</p>
+            <div class="category-filters">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="apparel">Apparel</button>
+                <button class="filter-btn" data-filter="accessories">Accessories</button>
+                <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+            </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section class="products">
-        <div class="container">
-            <div class="shop-header">
-                <h2>Featured Products</h2>
-                <div class="filter-options">
-                    <button class="filter-btn active">All</button>
-                    <button class="filter-btn">Apparel</button>
-                    <button class="filter-btn">Accessories</button>
-                    <button class="filter-btn">New Arrivals</button>
-                </div>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <span class="product-badge">Bestseller</span>
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Empowerment T-Shirt">
-                        <div class="product-actions">
-                            <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
-                            <button class="action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">"Nevertheless She Persisted" Tee</h3>
-                        <div class="product-price">
-                            <span class="current-price">$32.00</span>
-                            <span class="original-price">$40.00</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <button class="btn btn-outline">Select Options</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="HerWay Tote Bag">
-                        <div class="product-actions">
-                            <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
-                            <button class="action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Empowerment Tote Bag</h3>
-                        <div class="product-price">
-                            <span class="current-price">$24.99</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <button class="btn btn-outline">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <span class="product-badge">New</span>
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Women Empowerment Journal">
-                        <div class="product-actions">
-                            <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
-                            <button class="action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Women Empowerment Journal</h3>
-                        <div class="product-price">
-                            <span class="current-price">$18.00</span>
-                            <span class="original-price">$25.00</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <button class="btn btn-outline">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="HerWay Mug">
-                        <div class="product-actions">
-                            <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
-                            <button class="action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">"Future is Female" Mug</h3>
-                        <div class="product-price">
-                            <span class="current-price">$16.99</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <button class="btn btn-outline">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Collection -->
-    <section class="featured-collection">
+    <section class="products" id="products">
         <div class="container">
             <div class="section-header">
-                <h2>Empowerment Collection</h2>
-                <p>Curated bundles to inspire and empower</p>
+                <h2>Featured Products</h2>
+                <p>High-quality merchandise that makes a statement and supports our mission</p>
             </div>
-            <div class="collection-grid">
-                <div class="collection-card">
-                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Starter Kit" class="collection-image">
-                    <div class="collection-content">
-                        <h3>Feminist Starter Kit</h3>
-                        <p>T-shirt, tote bag, and journal - everything you need to show your support</p>
-                        <a href="#" class="btn">Shop Now</a>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="apparel">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80');"></div>
+                    <div class="product-content">
+                        <h3 class="product-title">"Nevertheless She Persisted" Tee</h3>
+                        <div class="product-price">R232.99</div>
+                        <p>Premium cotton t-shirt with an empowering message. Comfortable fit for everyday wear.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label>Size</label>
+                                <div class="option-buttons">
+                                    <button class="option-btn" data-option="size" data-value="S">S</button>
+                                    <button class="option-btn" data-option="size" data-value="M">M</button>
+                                    <button class="option-btn selected" data-option="size" data-value="L">L</button>
+                                    <button class="option-btn" data-option="size" data-value="XL">XL</button>
+                                </div>
+                            </div>
+                            
+                            <div class="option-group">
+                                <label>Color</label>
+                                <div class="option-buttons">
+                                    <button class="option-btn selected" data-option="color" data-value="Black" style="background: #000; color: white;">Black</button>
+                                    <button class="option-btn" data-option="color" data-value="White" style="background: #fff;">White</button>
+                                    <button class="option-btn" data-option="color" data-value="Navy" style="background: #0A192F; color: white;">Navy</button>
+                                </div>
+                            </div>
+                            
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" data-action="decrease">-</button>
+                                <input type="text" class="quantity-input" value="1" min="1" max="10">
+                                <button class="quantity-btn" data-action="increase">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary order-btn" data-product="Nevertheless She Persisted Tee" data-price="32.99">Order Now</button>
                     </div>
                 </div>
-                <div class="collection-card">
-                    <img src="https://images.unsplash.com/photo-1520006403909-838d6b92c22e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gift Bundle" class="collection-image">
-                    <div class="collection-content">
-                        <h3>Gift of Empowerment</h3>
-                        <p>Perfect gift set for the powerful women in your life</p>
-                        <a href="#" class="btn">Shop Now</a>
+                
+                <!-- Product 2 -->
+                <div class="product-card" data-category="apparel">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');"></div>
+                    <div class="product-content">
+                        <h3 class="product-title">Women Empowerment Hoodie</h3>
+                        <div class="product-price">R349.99</div>
+                        <p>Cozy hoodie with bold typography. Perfect for cool days and making a statement.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label>Size</label>
+                                <div class="option-buttons">
+                                    <button class="option-btn" data-option="size" data-value="S">S</button>
+                                    <button class="option-btn selected" data-option="size" data-value="M">M</button>
+                                    <button class="option-btn" data-option="size" data-value="L">L</button>
+                                    <button class="option-btn" data-option="size" data-value="XL">XL</button>
+                                </div>
+                            </div>
+                            
+                            <div class="option-group">
+                                <label>Color</label>
+                                <div class="option-buttons">
+                                    <button class="option-btn selected" data-option="color" data-value="Heather Gray" style="background: #9E9E9E; color: white;">Gray</button>
+                                    <button class="option-btn" data-option="color" data-value="Black" style="background: #000; color: white;">Black</button>
+                                    <button class="option-btn" data-option="color" data-value="Burgundy" style="background: #800020; color: white;">Burgundy</button>
+                                </div>
+                            </div>
+                            
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" data-action="decrease">-</button>
+                                <input type="text" class="quantity-input" value="1" min="1" max="10">
+                                <button class="quantity-btn" data-action="increase">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary order-btn" data-product="Women Empowerment Hoodie" data-price="49.99">Order Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-badge">New</div>
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1179&q=80');"></div>
+                    <div class="product-content">
+                        <h3 class="product-title">"Women Lift Each Other Up" Tote</h3>
+                        <div class="product-price">R228.99</div>
+                        <p>Spacious and sturdy tote bag made from eco-friendly materials with an inspiring message.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label>Color</label>
+                                <div class="option-buttons">
+                                    <button class="option-btn selected" data-option="color" data-value="Natural" style="background: #F5E9D6;">Natural</button>
+                                    <button class="option-btn" data-option="color" data-value="Black" style="background: #000; color: white;">Black</button>
+                                </div>
+                            </div>
+                            
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" data-action="decrease">-</button>
+                                <input type="text" class="quantity-input" value="1" min="1" max="10">
+                                <button class="quantity-btn" data-action="increase">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary order-btn" data-product="Women Lift Each Other Up Tote" data-price="28.99">Order Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card" data-category="lifestyle">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1595344155189-041a5f61a38c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                    <div class="product-content">
+                        <h3 class="product-title">HerWay Ceramic Mug</h3>
+                        <div class="product-price">R128.99</div>
+                        <p>Start your day with inspiration. High-quality ceramic mug with gold foil detailing.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label>Style</label>
+                                <div class="option-buttons">
+                                    <button class="option-btn selected" data-option="style" data-value="Black & Gold">Black & Gold</button>
+                                    <button class="option-btn" data-option="style" data-value="White & Gold">White & Gold</button>
+                                </div>
+                            </div>
+                            
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" data-action="decrease">-</button>
+                                <input type="text" class="quantity-input" value="1" min="1" max="10">
+                                <button class="quantity-btn" data-action="increase">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary order-btn" data-product="HerWay Ceramic Mug" data-price="18.99">Order Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80');"></div>
+                    <div class="product-content">
+                        <h3 class="product-title">Empowerment Journal</h3>
+                        <div class="product-price">R241.99</div>
+                        <p>Beautifully designed journal with prompts for self-reflection and goal setting.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label>Cover</label>
+                                <div class="option-buttons">
+                                    <button class="option-btn selected" data-option="cover" data-value="Gold Foil">Gold Foil</button>
+                                    <button class="option-btn" data-option="cover" data-value="Embossed">Embossed</button>
+                                </div>
+                            </div>
+                            
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" data-action="decrease">-</button>
+                                <input type="text" class="quantity-input" value="1" min="1" max="10">
+                                <button class="quantity-btn" data-action="increase">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary order-btn" data-product="Empowerment Journal" data-price="24.99">Order Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card" data-category="apparel">
+                    <div class="product-badge">Limited</div>
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80');"></div>
+                    <div class="product-content">
+                        <h3 class="product-title">Gold Empowerment Cap</h3>
+                        <div class="product-price">R129.99</div>
+                        <p>Stylish cap with embroidered HerWay logo. Adjustable fit for maximum comfort.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label>Color</label>
+                                <div class="option-buttons">
+                                    <button class="option-btn selected" data-option="color" data-value="Black" style="background: #000; color: white;">Black</button>
+                                    <button class="option-btn" data-option="color" data-value="Navy" style="background: #0A192F; color: white;">Navy</button>
+                                    <button class="option-btn" data-option="color" data-value="Khaki" style="background: #C3B091;">Khaki</button>
+                                </div>
+                            </div>
+                            
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" data-action="decrease">-</button>
+                                <input type="text" class="quantity-input" value="1" min="1" max="10">
+                                <button class="quantity-btn" data-action="increase">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary order-btn" data-product="Gold Empowerment Cap" data-price="29.99">Order Now</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter -->
+    <!-- Impact Section -->
+    <section class="impact" id="impact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Impact</h2>
+                <p>Your purchase supports HerWay's mission to empower women worldwide</p>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education Programs</h3>
+                    <p>20% of proceeds fund educational initiatives for girls and women in underserved communities.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Mentorship</h3>
+                    <p>We connect women with mentors in their fields to help them grow personally and professionally.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Amplifying Voices</h3>
+                    <p>Your support helps us platform women's stories and experiences through our magazine and events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
     <section class="newsletter">
         <div class="container">
-            <h2>Stay Updated</h2>
-            <p>Subscribe to get notified about new products, exclusive offers, and empowering content</p>
+            <div class="section-header">
+                <h2>Stay Connected</h2>
+                <p>Join our community and be the first to know about new products and exclusive offers</p>
+            </div>
+            
             <form class="newsletter-form">
                 <input type="email" class="newsletter-input" placeholder="Your email address">
-                <button type="submit" class="btn">Subscribe</button>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
             </form>
         </div>
     </section>
 
+    <!-- WhatsApp Float Button -->
+    <a href="#" class="whatsapp-float" id="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>HerWay Shop</h3>
-                    <p>Wear your empowerment. Each purchase supports our mission to celebrate and elevate women's voices.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>HerWay Store</h4>
+                    <p>Empowering women through fashion and accessories. Each purchase supports our mission.</p>
+                    <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Shop</h3>
+                
+                <div class="footer-col">
+                    <h4>Shop</h4>
                     <ul class="footer-links">
                         <li><a href="#">All Products</a></li>
                         <li><a href="#">Apparel</a></li>
                         <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Lifestyle</a></li>
                         <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Sale</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Support</h3>
+                
+                <div class="footer-col">
+                    <h4>Support</h4>
                     <ul class="footer-links">
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
                         <li><a href="#">Shipping & Returns</a></li>
                         <li><a href="#">Size Guide</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>About</h3>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Impact</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="mailto:store@herway.com">store@herway.com</a></li>
+                        <li><a href="tel:+1234567890">+27 81 425 2720</a></li>
+                        <li>123 Empowerment Ave, Suite 101<br>New York, NY 10001</li>
                     </ul>
                 </div>
             </div>
+            
             <div class="copyright">
-                <p>&copy; 2023 HerWay Magazine. All rights reserved.</p>
+                <p>&copy; 2025 HerWay Magazine. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-header">
-            <h3>Your Cart (3)</h3>
-            <button class="close-cart" id="closeCart">&times;</button>
-        </div>
-        <div class="cart-items">
-            <div class="cart-item">
-                <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product" class="cart-item-image">
-                <div class="cart-item-details">
-                    <h4 class="cart-item-title">"Nevertheless She Persisted" Tee</h4>
-                    <div class="cart-item-price">$32.00</div>
-                    <div class="cart-item-actions">
-                        <button class="quantity-btn">-</button>
-                        <span class="cart-item-quantity">1</span>
-                        <button class="quantity-btn">+</button>
-                        <button class="remove-item">Remove</button>
-                    </div>
-                </div>
-            </div>
-            <div class="cart-item">
-                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product" class="cart-item-image">
-                <div class="cart-item-details">
-                    <h4 class="cart-item-title">Empowerment Tote Bag</h4>
-                    <div class="cart-item-price">$24.99</div>
-                    <div class="cart-item-actions">
-                        <button class="quantity-btn">-</button>
-                        <span class="cart-item-quantity">1</span>
-                        <button class="quantity-btn">+</button>
-                        <button class="remove-item">Remove</button>
-                    </div>
-                </div>
-            </div>
-            <div class="cart-item">
-                <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product" class="cart-item-image">
-                <div class="cart-item-details">
-                    <h4 class="cart-item-title">Women Empowerment Journal</h4>
-                    <div class="cart-item-price">$18.00</div>
-                    <div class="cart-item-actions">
-                        <button class="quantity-btn">-</button>
-                        <span class="cart-item-quantity">1</span>
-                        <button class="quantity-btn">+</button>
-                        <button class="remove-item">Remove</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="cart-total">
-            <span>Total:</span>
-            <span>$74.99</span>
-        </div>
-        <button class="btn checkout-btn">Proceed to Checkout</button>
-    </div>
-
-    <div class="overlay" id="overlay"></div>
-
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Category filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                productCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Option selection
+        const optionButtons = document.querySelectorAll('.option-btn');
+        
+        optionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const optionGroup = button.parentElement;
+                const optionName = button.getAttribute('data-option');
+                
+                // Remove selected class from all buttons in this group
+                optionGroup.querySelectorAll('.option-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+                
+                // Add selected class to clicked button
+                button.classList.add('selected');
+            });
+        });
+        
+        // Quantity selector
+        const quantityButtons = document.querySelectorAll('.quantity-btn');
+        
+        quantityButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const action = button.getAttribute('data-action');
+                const input = button.parentElement.querySelector('.quantity-input');
+                let value = parseInt(input.value);
+                
+                if (action === 'increase' && value < 10) {
+                    input.value = value + 1;
+                } else if (action === 'decrease' && value > 1) {
+                    input.value = value - 1;
+                }
+            });
+        });
+        
+        // Order Now functionality
+        const orderButtons = document.querySelectorAll('.order-btn');
+        const cartCount = document.querySelector('.cart-count');
+        let cartItems = 0;
+        
+        orderButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productCard = button.closest('.product-card');
+                const productName = button.getAttribute('data-product');
+                const productPrice = button.getAttribute('data-price');
+                
+                // Get selected options
+                const size = productCard.querySelector('[data-option="size"] .selected')?.getAttribute('data-value') || 'One Size';
+                const color = productCard.querySelector('[data-option="color"] .selected')?.getAttribute('data-value') || 'Default';
+                const style = productCard.querySelector('[data-option="style"] .selected')?.getAttribute('data-value') || 'Standard';
+                const cover = productCard.querySelector('[data-option="cover"] .selected')?.getAttribute('data-value') || 'Standard';
+                const quantity = productCard.querySelector('.quantity-input').value;
+                
+                // Determine which option to include based on product
+                let option = size;
+                if (color !== 'Default') option = color;
+                if (style !== 'Standard') option = style;
+                if (cover !== 'Standard') option = cover;
+                
+                // Create WhatsApp message
+                const message = `Hello! I would like to order:\n\nProduct: ${productName}\nOption: ${option}\nQuantity: ${quantity}\nPrice: $${productPrice}\n\nTotal: $${(productPrice * quantity).toFixed(2)}`;
+                const encodedMessage = encodeURIComponent(message);
+                
+                // Open WhatsApp
+                window.open(`https://wa.me/+27814252720?text=${encodedMessage}`, '_blank');
+                
+                // Update cart count
+                cartItems += parseInt(quantity);
+                cartCount.textContent = cartItems;
+            });
+        });
+        
+        // WhatsApp float button
+        const whatsappFloat = document.getElementById('whatsapp-float');
+        
+        whatsappFloat.addEventListener('click', (e) => {
+            e.preventDefault();
+            const message = encodeURIComponent("Hello! I have a question about HerWay merchandise.");
+            window.open(`https://wa.me/+27814252720?text=${message}`, '_blank');
+        });
+        
+        // Scroll animations
+        function checkVisibility() {
+            const elements = document.querySelectorAll('.product-card');
+            
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect();
+                
+                // Checking if the element is in the viewport
+                if(position.top < window.innerHeight - 100 && position.bottom >= 0) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Initial check and then on scroll
+        window.addEventListener('scroll', checkVisibility);
+        window.addEventListener('load', checkVisibility);
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
